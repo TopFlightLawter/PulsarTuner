@@ -1,0 +1,42 @@
+name: PulsarTuner
+options:
+  bundleIdPrefix: com.pulsarlab
+  deploymentTarget:
+    iOS: "16.0"
+targets:
+  PulsarTuner:
+    type: application
+    platform: iOS
+    sources: [Sources/PulsarTuner]
+    info:
+      properties:
+        UILaunchScreen: {}
+        NSLocalNetworkUsageDescription: "PulsarTuner connects to your Pulsar Flex alarm clock over your home WiFi to read and update its alarm settings."
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.pulsarlab.pulsartuner
+        SWIFT_VERSION: "5.0"
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        CODE_SIGN_STYLE: Automatic
+  PulsarTunerTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [Tests/PulsarTunerTests]
+    dependencies:
+      - target: PulsarTuner
+    settings:
+      base:
+        SWIFT_VERSION: "5.0"
+schemes:
+  PulsarTuner:
+    build:
+      targets:
+        PulsarTuner: all
+        PulsarTunerTests: [test]
+    test:
+      targets: [PulsarTunerTests]
+    run:
+      config: Debug
