@@ -68,6 +68,7 @@ targets:
     settings:
       base:
         SWIFT_VERSION: "5.0"
+        GENERATE_INFOPLIST_FILE: YES
 schemes:
   PulsarTuner:
     build:
