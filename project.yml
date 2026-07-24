@@ -9,6 +9,7 @@ targets:
     platform: iOS
     sources: [Sources/PulsarTuner]
     info:
+      path: Sources/PulsarTuner/Info.plist
       properties:
         UILaunchScreen: {}
         NSLocalNetworkUsageDescription: "PulsarTuner connects to your Pulsar Flex alarm clock over your home WiFi to read and update its alarm settings."
