@@ -15,7 +15,7 @@ struct RootView: View {
             }
         }
         .onAppear { connection.connect() }
-        .onChange(of: connection.config) { _, newConfig in
+        .onChange(of: connection.config) { newConfig in
             guard let newConfig else { return }
             if let viewModel {
                 viewModel.applyIncoming(newConfig)
